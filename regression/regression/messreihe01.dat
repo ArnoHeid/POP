@@ -1,0 +1,14 @@
+# Quelle: Clauß, G. u.a.: Statistik für Soziologen, Pädagogen, Psychologen und Mediziner, Band 1, 2. Aufl, 1995, Harri Deutsch, S.87
+#
+# Experiment: Pfanzenhöhe in Abhängigkeit vom Pflanzenalter
+#
+# X: Pflanzenalter [Wochen]
+# Y: Pflanzenhöhe  [cm]
+# 
+1  5
+2 12
+3 16
+4 21
+5 32
+6 39
+7 43

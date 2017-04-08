@@ -1,0 +1,16 @@
+# Quelle: Niemeier, W.: Ausgleichsrechnung. de Gruyter, 2002, S. 344
+#
+# Experiment: Kalibrierung einer elektronischer Libelle
+# 
+# X: Sollneigung          [mgon]
+# Y: Spannung             [mV]
+ 0.0  17.2
+ 2.0  34.1
+ 4.0  50.9
+ 6.0  68.5
+ 8.0  86.2
+10.0 103.1
+12.0 121.0
+15.0 143.8
+20.0 185.3
+25.0 228.7

@@ -1,0 +1,43 @@
+# Quelle: Clauß, G. u.a.: Statistik für Soziologen, Pädagogen, Psychologen und Mediziner, Band 1, 2. Aufl, 1995, Harri Deutsch, S.88
+#
+# Experiment: Medikament zur Erhöhung der Blutwerte
+#
+# X: Zeit_nach_Verabreichung_des_Medikaments [Wochen]
+# Y: Blutwert                                []
+# 
+2 3
+2 2
+2 4
+2 2
+2 3
+2 1
+4 3
+4 2
+4 5
+4 3
+4 3
+4 2
+6 4
+6 3
+6 6
+6 3
+6 4
+6 2
+8 5
+8 4
+8 6
+8 4
+8 4
+8 3
+10 7
+10 4
+10 7
+10 4
+10 5
+10 3
+12 7
+12 5
+12 7
+12 5
+12 6
+12 3
