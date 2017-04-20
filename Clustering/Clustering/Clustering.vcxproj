@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E523703C-B59E-4EEB-A0E4-0108B576842B}</ProjectGuid>
+    <ProjectGuid>{C0FCEDB9-080D-4EAA-9173-63EA098CA4D4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>regression</RootNamespace>
+    <RootNamespace>Clustering</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,12 +138,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="regression.h" />
+    <ClInclude Include="Cluster.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="regression.cpp" />
+    <ClCompile Include="Cluster.cpp" />
+    <ClCompile Include="Clustering.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

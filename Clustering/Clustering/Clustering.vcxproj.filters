@@ -24,7 +24,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="regression.h">
+    <ClInclude Include="Cluster.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +32,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="regression.cpp">
+    <ClCompile Include="Clustering.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Cluster.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
