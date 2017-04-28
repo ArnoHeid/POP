@@ -1,0 +1,4 @@
+B A C  100.0  300.0 25.0  // PNR-Station PNR-Von PNR-Nach Hzvon Hznach Snach
+C B D  100.0  300.0 25.0
+D C E  100.0  300.0 25.0
+E D F  100.0  300.0 -.-
