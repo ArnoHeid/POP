@@ -20,8 +20,10 @@ element *first;
 element *last;
 //Functions	
 void addTail(element *newElement);
+void addFront(element *newElement);
 eleList::element* findElement(char standpunkt);
 eleList::element* findOrCreateElement(char standpunkt);
+eleList::element* findLast();
 //Construktor/Dekonstruktor
 	eleList();
 	~eleList();

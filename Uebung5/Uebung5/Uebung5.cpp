@@ -20,7 +20,7 @@ int main()
 	//Zeiger 
 	eleList liste;
 
-	infile.open("beispiel01.txt");
+	infile.open("beispiel02.txt");
 	if (!infile)
 	{
 		std::cout << "File open error.";
@@ -60,7 +60,36 @@ int main()
 	}
 
 
+	eleList::element *akt = liste.findLast();
+	
+	eleList sortedList;
+	//
 
+	sortedList.addFront(liste.findOrCreateElement(akt->after));
+
+	//Standpunkte Schreiben
+	while (akt!=nullptr)
+	{
+		sortedList.addFront(akt);
+		akt = liste.findOrCreateElement(akt->befor);
+	}
+
+	sortedList.addFront(liste.findOrCreateElement(sortedList.first->befor));
+
+	akt = sortedList.first;
+
+	while (akt!=nullptr)
+	{
+		std::cout << akt->stand;
+		if(akt->angle!=NULL)
+		{
+			std::cout << ' ' <<akt->angle << ' ' << akt->dist;
+		}
+		std::cout<< std::endl;
+		akt = akt->next;
+	}
+
+	system("pause");
 	return 0;
 }
 
