@@ -156,6 +156,7 @@ public:
 
 	void calcStatisics()
 	{
+		ofstream outfile("residuum.csv");
 		cout << fixed << "Min X =" << min(xValues) << endl;
 		cout << fixed << "Min Y =" << min(yValues) << endl;
 		cout << fixed << "Max X =" << max(xValues) << endl;
@@ -180,9 +181,14 @@ public:
 		cout << fixed << "Korrel Kof. =" << korKof << endl;
 		cout << fixed << "Bestimmtheitsmaß =" << pow(korKof, 2) << endl;
 		vector<double> residuum = res(xValues, yValues);
+		double b = kovar(xValues, yValues) / varianz(xValues);
+		double a = mean(yValues) - b * mean(xValues);
+		cout << "Y-Achsenabschnitt: " << a << endl;
+		cout << "Steigung: " << b << endl;
 		cout << "Residuuen: " << endl;
 		for each (auto var in residuum)
 		{
+			outfile << var << endl;
 			cout << var << endl;
 		}
 		cout << fixed << "Reststreuung =" << rest(residuum) << endl;
@@ -192,6 +198,7 @@ public:
 		{
 			cout << var << endl;
 		}
+		outfile.close();
 	}
 };
 
@@ -204,8 +211,17 @@ int main(int argc, char* argv[])
 	const int bufflen = 1024;
 	char buffer[bufflen + 1];
 	mess messwerte;
+	string inputfile;
+	if(argc==2)
+	{
+		inputfile = argv[1];
+	}
+	else
+	{
+		inputfile = "messreihe01.dat";
+	}
 
-	infile.open("messreihe01.dat");
+	infile.open(inputfile);
 	if (!infile)
 	{
 		cout << "File open error.";
@@ -242,8 +258,7 @@ int main(int argc, char* argv[])
 
 	messwerte.calcStatisics();
 
-	system("pause");
-
 	infile.close();
 	outfile.close();
+	system("pause");
 }
