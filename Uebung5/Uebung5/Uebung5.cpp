@@ -65,16 +65,28 @@ int main()
 	eleList sortedList;
 	//
 
-	sortedList.addFront(liste.findOrCreateElement(akt->after));
+	sortedList.addFront(liste.findOrCreateElement(akt->after),liste,false);
 
 	//Standpunkte Schreiben
-	while (akt!=nullptr)
+	while (akt != nullptr)
 	{
-		sortedList.addFront(akt);
+		sortedList.addFront(akt,liste,false);
 		akt = liste.findOrCreateElement(akt->befor);
+		//std::cout << "Liste:"<<std::endl;
+		//liste.debug();
+		//std::cout << "Sorted List"<<std::endl;
+		//sortedList.debug();
 	}
 
-	sortedList.addFront(liste.findOrCreateElement(sortedList.first->befor));
+	eleList::element *newElement = new eleList::element();
+	newElement->islast = false;
+	newElement->angle = NULL;
+	newElement->dist = NULL;
+	newElement->next = nullptr;
+	newElement->prev = nullptr;
+	newElement->stand = sortedList.first->befor;
+
+	sortedList.addFront(newElement,liste,true);
 
 	akt = sortedList.first;
 

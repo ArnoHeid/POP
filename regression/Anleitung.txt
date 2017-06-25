@@ -1,0 +1,2 @@
+Die zu öffnede Datei kann als Paramter übergeben werden.
+"regression.exe messreihe01.dat"

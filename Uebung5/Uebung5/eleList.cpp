@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "eleList.h"
+#include <iostream>
 
 
 void eleList::addTail(element* newElement)
@@ -13,10 +14,11 @@ void eleList::addTail(element* newElement)
 		newElement->prev = last;
 		last->next = newElement;
 		last = newElement;
+		
 	}
 }
 
-void eleList::addFront(element* newElement)
+void eleList::addFront(element* newElement, eleList otherList,bool soloElement)
 {
 	if (last == nullptr)
 	{
@@ -24,9 +26,48 @@ void eleList::addFront(element* newElement)
 	}
 	else
 	{
+		if(!soloElement)
+		{
+		if(newElement->prev != nullptr && newElement->next !=nullptr)
+		{
+			newElement->next->prev = newElement->prev;
+		}
+
+		if(newElement->next !=nullptr && newElement->prev != nullptr)
+		{
+			newElement->prev->next = newElement->next;
+		}
+		if(newElement->next == nullptr)
+		{
+			newElement->prev->next = nullptr;
+		}
+		if (newElement->prev == nullptr)
+		{
+			newElement->next->prev = nullptr;
+			otherList.first = newElement->next;
+		}			
+		}
+
 		newElement->next = first;
 		first->prev = newElement;
 		first = newElement;
+		newElement->prev = nullptr;
+	}
+}
+
+void eleList::debug()
+{
+	element*akt = first;
+
+	while (akt != nullptr)
+	{
+		std::cout << akt->stand;
+		if (akt->angle != NULL)
+		{
+			std::cout << ' ' << akt->angle << ' ' << akt->dist;
+		}
+		std::cout << std::endl;
+		akt = akt->next;
 	}
 }
 
@@ -57,29 +98,36 @@ eleList::element* eleList::findOrCreateElement(char standpunkt)
 	{
 		if (akut->stand == standpunkt)
 		{
-			element *newElement = new element();
-			newElement->islast = akut->islast;
-			newElement->angle = akut->angle;
-			newElement->dist = akut->dist;
-			newElement->stand = akut->stand;
-			newElement->befor = akut->befor;
-			newElement->after = akut->after;
-			newElement->next = nullptr;
-			newElement->prev = nullptr;
-			return newElement;
+			if(first==akut)
+			{
+				first = akut->next;
+			}
+			return akut;
 		}
 			
 		akut = akut->next;
 	}
 
-	element *newElement = new element();
-	newElement->islast = false;
-	newElement->angle = NULL;
-	newElement->dist = NULL;
-	newElement->next = nullptr;
-	newElement->prev = nullptr;
-	newElement->stand = standpunkt;
-	return newElement;
+	akut = first;
+
+	while (akut != nullptr)
+	{
+		if (akut->after == standpunkt || akut->befor == standpunkt)
+		{
+			element *newElement = new element();
+			newElement->islast = false;
+			newElement->angle = NULL;
+			newElement->dist = NULL;
+			newElement->next = nullptr;
+			newElement->prev = nullptr;
+			newElement->stand = standpunkt;
+			return newElement;
+		}
+
+		akut = akut->next;
+	}
+
+	return nullptr;
 }
 
 
